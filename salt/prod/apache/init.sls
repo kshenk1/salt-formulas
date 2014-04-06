@@ -11,6 +11,6 @@ apache:
 /var/www/html/index.html:
     file:
         - managed
-        - source: salt://httpd/index.html
+        - source: salt://apache/index.html
         - require:
             - pkg: apache
