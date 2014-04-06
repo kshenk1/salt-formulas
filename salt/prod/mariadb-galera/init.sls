@@ -1,4 +1,4 @@
-mariadb:
+mariadb-galera:
     pkg: 
         - installed
         - name: {{ salt['pillar.get']('packages:mariadb_galera_server', '') }}
