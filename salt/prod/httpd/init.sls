@@ -4,4 +4,4 @@ httpd:
     service:
         - running
         - require:
-        - pkg: httpd
+            - pkg: httpd
