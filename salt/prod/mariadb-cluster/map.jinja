@@ -1,8 +1,9 @@
 {% set mariadb = salt['grains.filter_by']({
+    ## default filter_by is os_family
     'RedHat': {
-        'galera_server': 'MariaDB-Galera-server',
-        'client': 'MariaDB-client',
-        'galera': 'galera',
-        'service': 'mysql',
+        'galera_server':    'MariaDB-Galera-server',
+        'client':           'MariaDB-client',
+        'galera':           'galera',
+        'service':          'mysql',
     },
 }, merge=salt['pillar.get']('mariadb:lookup')) %}
