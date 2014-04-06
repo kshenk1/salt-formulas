@@ -1,7 +1,7 @@
 base:
-#    'mdb*':
-#        - repos.mariadb-repo
+    'mdb*':
+        - repos.mariadb-repo
 #        - mariadb-galera
     'webserver*':
-        - webserver
+        - apache
 
