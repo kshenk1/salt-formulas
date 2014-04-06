@@ -1,7 +1,7 @@
-apache:
+httpd:
     pkg:
-        - name: {{ salt['pillar.get']('pkgs:apache', '') }}
         - installed
     service:
         - running
-        - name: {{ salt['pillar.get']('pkgs:apache', '') }}
+        - require:
+        - pkg: httpd
