@@ -1,15 +1,17 @@
+{% from "mariadb-cluster/map.jinja" import mariadb with context %}
+
 mariadb-cluster:
     pkg: 
         - installed
-        - name: {{ salt['pillar.get']('packages:mariadb_galera_server', 'mariadb_server') }}
+        - name: {{ mariadb.galera_server }}
         - require:
-            - pkg: {{ salt['pillar.get']('packages:mariadb_client', 'mariadb_client') }}
-            - pkg: {{ salt['pillar.get']('packages:galera', 'galera') }}
+            - pkg: {{ mariadb.client }}
+            - pkg: {{ mariadb.galera }}
 
-{{ salt['pillar.get']('packages:mariadb_client', 'mariadb_client') }}:
+{{ mariadb.client }}:
     pkg:
         - installed
 
-{{ salt['pillar.get']('packages:galera', 'galera') }}:
+{{ mariadb.galera }}:
     pkg:
         - installed

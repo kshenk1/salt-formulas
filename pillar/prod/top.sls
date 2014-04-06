@@ -1,3 +1,4 @@
 base:
     '*':
-        - packages
+        - packages.mariadb-cluster
+        - packages.apache

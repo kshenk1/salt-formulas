@@ -1,14 +1,16 @@
+{% from "apache/map.jinja" import apache with context %}
+
 apache:
     pkg:
-        - name: {{ salt['pillar.get']('packages:apache', 'httpd') }}
+        - name: {{ apache.server }}
         - installed
     service:
-        - name: {{ salt['pillar.get']('packages:apache', 'httpd') }}
+        - name: {{ apache.service }}
         - running
         - require:
             - pkg: apache
 
-/var/www/html/index.html:
+{{ apache.wwwdir }}/index.html:
     file:
         - managed
         - source: salt://apache/index.html
