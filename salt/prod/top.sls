@@ -3,5 +3,5 @@ base:
         - repos.mariadb-repo
 #        - mariadb-galera
     'webserver*':
-        - httpd
+        - apache
 
