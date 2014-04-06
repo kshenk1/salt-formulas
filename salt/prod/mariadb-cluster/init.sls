@@ -1,4 +1,4 @@
-mariadb:
+mariadb-cluster:
     pkg: 
         - installed
         - name: {{ salt['pillar.get']('packages:mariadb_galera_server', 'mariadb_server') }}
