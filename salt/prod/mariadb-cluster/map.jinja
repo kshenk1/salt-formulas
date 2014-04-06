@@ -1,5 +1,4 @@
 {% set mariadb = salt['grains.filter_by']({
-    ## default filter_by is os_family
     'RedHat': {
         'galera_server':    'MariaDB-Galera-server',
         'client':           'MariaDB-client',

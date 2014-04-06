@@ -1,5 +1,4 @@
 {% set apache = salt['grains.filter_by']({
-    ## default filter_by is os_family
     'Debian': {
         'server':   'apache2',
         'service':  'apache2',
