@@ -5,17 +5,17 @@ user=mysql
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
 
-key_buffer_size         = {{ mysql.tunables.key_buffer_size }}
-sort_bufer_size         = {{ mysql.tunables.sort_buffer_size }}
+key_buffer_size         = {{ salt['pillar.get']('mysql:tunables:key_buffer_size', '512M') }}
+sort_bufer_size         = {{ salt['pillar.get']('mysql:tunables:sort_buffer_size', '8M') }}
 
-tmp_table_size          = {{ mysql.tunables.tmp_table_size }}
-max_heap_table_size     = {{ mysql.tunables.max_heap_table_size }}
+tmp_table_size          = {{ salt['pillar.get']('mysql:tunables:tmp_table_size') }}
+max_heap_table_size     = {{ salt['pillar.get']('mysql:tunables:max_heap_table_size') }}
 
-query_cache_type        = {{ mysql.tunables.query_cache_type }}
-query_cache_size        = {{ mysql.tunables.query_cache_size }}
-query_cache_limit       = {{ mysql.tunables.query_cache_limit }}
+query_cache_type        = {{ salt['pillar.get']('mysql:tunables:query_cache_type') }}
+query_cache_size        = {{ salt['pillar.get']('mysql:tunables:query_cache_size') }}
+query_cache_limit       = {{ salt['pillar.get']('mysql:tunables:query_cache_limit') }}
 
-log_warnings            = {{ mysql.tunables.log_warnings }}
+log_warnings            = {{ salt['pillar.get']('mysql:tunables:log_warnings') }}
 
 [mysqld_safe]
 log-error=/var/log/mysqld.log
