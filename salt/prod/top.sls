@@ -4,4 +4,7 @@ base:
         - mariadb-cluster
     'webserver*':
         - apache
+    'mysql*':
+        - mysql.server
+        - mysql.client
 
