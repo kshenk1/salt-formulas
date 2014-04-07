@@ -6,12 +6,12 @@ user=mysql
 symbolic-links=0
 
 key_buffer_size         = {{ salt['pillar.get']('mysql:tunables:key_buffer_size', '512M') }}
-sort_bufer_size         = {{ salt['pillar.get']('mysql:tunables:sort_buffer_size', '8M') }}
+sort_buffer_size        = {{ salt['pillar.get']('mysql:tunables:sort_buffer_size', '8M') }}
 
 tmp_table_size          = {{ salt['pillar.get']('mysql:tunables:tmp_table_size', '16M') }}
 max_heap_table_size     = {{ salt['pillar.get']('mysql:tunables:max_heap_table_size', '16M') }}
 
-query_cache_type        = {{ salt['pillar.get']('mysql:tunables:query_cache_type', 'OFF') }}
+query_cache_type        = {{ salt['pillar.get']('mysql:tunables:query_cache_type', '0') }}
 query_cache_size        = {{ salt['pillar.get']('mysql:tunables:query_cache_size', '8M') }}
 query_cache_limit       = {{ salt['pillar.get']('mysql:tunables:query_cache_limit', '1M') }}
 
