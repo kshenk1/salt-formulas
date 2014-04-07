@@ -27,6 +27,19 @@ my.cnf:
       - service: mysqld
 {% endif %}
 
+{% if grains['os'] == 'CentOS' %}
+my.cnf:
+  file.managed:
+    - name: {{ mysql.config }}
+    - source: salt://mysql/files/{{ grains['os'] }}-my.cnf
+    - user: root
+    - group: root
+    - mode: 644
+    - template: jinja
+    - watch_in:
+      - service: mysqld
+{% endif %}
+
 # Set SELinux to permissive mode while installing mysqld otherwise the
 # mysql user will not be created; restore enforcing when done.
 {% if (grains['os_family'] == 'RedHat'
